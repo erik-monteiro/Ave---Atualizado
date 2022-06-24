@@ -4,26 +4,26 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 		Ave[] aves = {
-				new Ave("pomba-do-Orvalho", "patagioenas maculosa", "spot-winged Pigeon", "cinza", "35",
-						"campo 						com árvores", "columbidae", "20", "1", "2"),
-				new Ave("coruja-buraqueira", "Athene cunicularia", "Burrowing Owl", "marrom", "25", "Campo seco baixo",
-						"Strigidae", "25", "2", "2"),
-				new Ave("Graúna", "Gnorinopsar chopi", "Chopi Blackbird", "preto", "23", "Campo seco alto", "Icteridae",
-						"13", "3", "1"),
-				new Ave("Canário-Rasteiro", "Sicalis citrina", "Stripe-tailed Yellow-Finch", "amarelo", "12",
-						"Compo seco alto", "Thraupidae", "40", "1", "2"),
-				new Ave("Caturrita", "Myiopsitta monachus", "Monk Parakeet", "verde", "27",
-						"Campo seco baixo e Campo com árvores", "Psittacidae", "34", "2", "1"),
-				new Ave("curiango-do-banhado", "hydropsalis anomala", "Sickle-winged nightjar", "marron", "17",
-						"campo seco alto", "caprimulgidae", "26", "1", "2"),
-				new Ave("Cardeal", "Paroaria coronata", "Red-crested Cardinal", "branco", "17", "Campo com arvores",
-						"Thraupidae", "11", "2", "2"),
-				new Ave("Cardeal-do-Banhado", "Amblyramphus holosericeus", "Scarlet-headed Blackbird", "Preto", "22",
-						"banhado com vegetação alta", "Icteridae", "14", "3", "1"),
-				new Ave("Amarelinho-do-Junco", "Pseudocolopteryx flaviventris", "Warbling Doradito", "Amarelo", "10",
-						"habitat", "Tyrannidae", "40", "3", "1"),
-				new Ave("Noivinha-coroada", "Xolmis coronatus", "Black-crowned Monjita", "branco", "20",
-						"Campo com arvores", "Tyrannidae", "10", "3", "2") 
+			new Ave("pomba-do-Orvalho", "patagioenas maculosa", "spot-winged Pigeon", "cinza", "35",
+					"campo 						com árvores", "columbidae", "20", "1", "2"),
+			new Ave("coruja-buraqueira", "Athene cunicularia", "Burrowing Owl", "marrom", "25", "Campo seco baixo",
+					"Strigidae", "25", "2", "2"),
+			new Ave("Graúna", "Gnorinopsar chopi", "Chopi Blackbird", "preto", "23", "Campo seco alto", "Icteridae",
+					"13", "3", "1"),
+			new Ave("Canário-Rasteiro", "Sicalis citrina", "Stripe-tailed Yellow-Finch", "amarelo", "12",
+					"Compo seco alto", "Thraupidae", "40", "1", "2"),
+			new Ave("Caturrita", "Myiopsitta monachus", "Monk Parakeet", "verde", "27",
+					"Campo seco baixo e Campo com árvores", "Psittacidae", "34", "2", "1"),
+			new Ave("curiango-do-banhado", "hydropsalis anomala", "Sickle-winged nightjar", "marron", "17",
+					"campo seco alto", "caprimulgidae", "26", "1", "2"),
+			new Ave("Cardeal", "Paroaria coronata", "Red-crested Cardinal", "branco", "17", "Campo com arvores",
+					"Thraupidae", "11", "2", "2"),
+			new Ave("Cardeal-do-Banhado", "Amblyramphus holosericeus", "Scarlet-headed Blackbird", "Preto", "22",
+					"banhado com vegetação alta", "Icteridae", "14", "3", "1"),
+			new Ave("Amarelinho-do-Junco", "Pseudocolopteryx flaviventris", "Warbling Doradito", "Amarelo", "10",
+					"habitat", "Tyrannidae", "40", "3", "1"),
+			new Ave("Noivinha-coroada", "Xolmis coronatus", "Black-crowned Monjita", "branco", "20",
+					"Campo com arvores", "Tyrannidae", "10", "3", "2") 
 		};
 
 		boolean sucesso = true;
@@ -41,14 +41,18 @@ public class Main {
 			        System.out.println("\n");
 				
 			        System.out.println("Primeiramente, digite a data da sua anotação: dd/mm/aaaa ");
-					String data = entrada.next();
+					StringBuilder data = new StringBuilder(entrada.next()); 
+		            data = data.deleteCharAt(2);
+		            data = data.deleteCharAt(4);
 					System.out.println("Qual ave foi identificada? ");
 					String aveIdentificada = entrada.next();
 					System.out.println("Digite o local: ");
 					String local = entrada.next();
+          			
 
 					Anotacao[] anotacoes = { new Anotacao (data, aveIdentificada, local) };
-
+          		
+          
 					for (int i = 0; i < anotacoes.length; i++) {
 						System.out.println(anotacoes[i].getData());
 						System.out.println(anotacoes[i].getAveIdentificada());
@@ -235,7 +239,8 @@ public class Main {
 		System.out.println("\t2 - Consultar catálogo ");
 		System.out.println("\t3 - Consultar catálogo por páginas ");
 		System.out.println("\t4 - Pesquisar ave ");
-		System.out.println("\t5 - Sair do programa ");
+		System.out.println("\t5 - Consultar aves avistadas no mês ");
+		System.out.println("\t6 - Sair do programa ");
 	}
 
 }

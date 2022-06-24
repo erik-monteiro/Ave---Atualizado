@@ -6,19 +6,17 @@ Feitos:
 	[1 pt] consulta de todas as aves de um certo habitat. (OK)
 	[1 pt] arranjo para armazenar ao menos 10 aves do catálogo de aves de Fontana et alli. (OK)
 	[1 pt] repositório no GitHub, com contribuições de toda equipe. (+/-)
+	[1 pt] arranjo para armazenar anotações do ornitólogo.(NINJA! KKKKKKKKKKKK)
 
 A fazer:
 	[1 pt] consulta de todas as aves avistadas em um certo mês do ano.
-	[1 pt] arranjo para armazenar anotações do ornitólogo.
 	[1 pt] documentação JavaDoc completa.
 	[1 pt] testes automáticos de todas as operações.
 	[1 pt] leitura de dados de arquivo. (COMO FAZER?)
 	[1 pt] gravação de dados para arquivo. (COMO FAZER?)
-caraio mano
-deu certo
-kkkkk
-nao creio
-ia tentar agr
-nem vou mais kkk
 
-temos que armaz
+
+proximos passos:
+
+armazenar vetor em algum lugar para podermos consultar dps
+fazer o consultor por data
