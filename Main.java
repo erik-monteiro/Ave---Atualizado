@@ -38,6 +38,24 @@ public class Main {
 				case 1:
 					System.out.println("\f");
 					System.out.println(" --- ANOTAÇÕES --- ");
+			        System.out.println("\n");
+				
+			        System.out.println("Primeiramente, digite a data da sua anotação: dd/mm/aaaa ");
+					String data = entrada.next();
+					System.out.println("Qual ave foi identificada? ");
+					String aveIdentificada = entrada.next();
+					System.out.println("Digite o local: ");
+					String local = entrada.next();
+
+					Anotacao[] anotacoes = { new Anotacao (data, aveIdentificada, local) };
+
+					System.out.println(anotacoes[0]);
+					System.out.println(anotacoes[1]);
+					System.out.println(anotacoes[2]);
+					
+					
+			      	sucesso = false;
+        
 					break;
 
 				case 2:
@@ -210,12 +228,13 @@ public class Main {
 	}
 
 	public static void mostrarMenu() {
-		System.out.println(" --- MENU --- ");
-		System.out.println(" 1 - Anotar ");
-		System.out.println(" 2 - Consultar catálogo ");
-		System.out.println(" 3 - Consultar catálogo por páginas ");
-		System.out.println(" 4 - Pesquisar ave ");
-		System.out.println(" 5 - Sair do programa ");
+		System.out.println("\n\t        MENU");
+		System.out.println("\t        ====");
+		System.out.println("\t1 - Anotar ");
+		System.out.println("\t2 - Consultar catálogo ");
+		System.out.println("\t3 - Consultar catálogo por páginas ");
+		System.out.println("\t4 - Pesquisar ave ");
+		System.out.println("\t5 - Sair do programa ");
 	}
 
 }
