@@ -23,16 +23,13 @@ public class Main {
 				new Ave("Amarelinho-do-Junco", "Pseudocolopteryx flaviventris", "Warbling Doradito", "Amarelo", "10",
 						"habitat", "Tyrannidae", "40", "3", "1"),
 				new Ave("Noivinha-coroada", "Xolmis coronatus", "Black-crowned Monjita", "branco", "20",
-						"Campo com arvores", "Tyrannidae", "10", "3", "2") };
+						"Campo com arvores", "Tyrannidae", "10", "3", "2") 
+		};
 
 		boolean sucesso = true;
 		while (sucesso) {
-			System.out.println(" --- INÍCIO DO PROGRAMA --- ");
-			System.out.println(" 1 - Anotar ");
-			System.out.println(" 2 - Consultar catálogo ");
-			System.out.println(" 3 - Consultar catálogo por páginas ");
-			System.out.println(" 4 - Pesquisar ave ");
-			System.out.println(" 5 - Sair do programa ");
+			
+			mostrarMenu();
 
 			int opcao = entrada.nextInt();
 			String saida = "OK";
@@ -90,7 +87,7 @@ public class Main {
                                 System.out.println("\t Família: " + aves[i].getFamilia()); 
                                 System.out.println("\n");
 
-                            } else{
+                            } else {
                                 controle++;
                             }
                         }
@@ -205,6 +202,15 @@ public class Main {
 					continue;
 			}
 		}
+	}
+
+	public static void mostrarMenu() {
+		System.out.println(" --- INÍCIO DO PROGRAMA --- ");
+		System.out.println(" 1 - Anotar ");
+		System.out.println(" 2 - Consultar catálogo ");
+		System.out.println(" 3 - Consultar catálogo por páginas ");
+		System.out.println(" 4 - Pesquisar ave ");
+		System.out.println(" 5 - Sair do programa ");
 	}
 
 }
