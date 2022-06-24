@@ -49,13 +49,14 @@ public class Main {
 
 					Anotacao[] anotacoes = { new Anotacao (data, aveIdentificada, local) };
 
-					System.out.println(anotacoes[0]);
-					System.out.println(anotacoes[1]);
-					System.out.println(anotacoes[2]);
+					for (int i = 0; i < anotacoes.length; i++) {
+						System.out.println(anotacoes[i].getData());
+						System.out.println(anotacoes[i].getAveIdentificada());
+						System.out.println(anotacoes[i].getLocal());
+					}
 					
 					
 			      	sucesso = false;
-        
 					break;
 
 				case 2:
