@@ -41,9 +41,8 @@ public class Main {
 			        System.out.println("\n");
 				
 			        System.out.println("Primeiramente, digite a data da sua anotação: dd/mm/aaaa ");
-					StringBuilder data = new StringBuilder(entrada.next()); 
-		            data = data.deleteCharAt(2);
-		            data = data.deleteCharAt(4);
+					String data = entrada.next(); 
+					data = data.replace("/", ""); 
 					System.out.println("Qual ave foi identificada? ");
 					String aveIdentificada = entrada.next();
 					System.out.println("Digite o local: ");
@@ -220,6 +219,12 @@ public class Main {
 					}
 
 				case 5:
+					System.out.println("\f");
+					System.out.println("\t --- CATÁLOGO DE AVES --- ");
+					System.out.println("\n");
+					
+
+				case 6:
 					// System.out.println("\f");
 					System.out.println("Programa encerrado!");
 					sucesso = false;
