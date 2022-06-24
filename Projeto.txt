@@ -19,4 +19,7 @@ A fazer:
 proximos passos:
 
 armazenar vetor em algum lugar para podermos consultar dps
-fazer o consultor por data
+fazer um char que pegue a variável data e armazene o mês em uma parte do vetor e o ano em outra
+fazer case para pesquisa de anotações com filtro de data
+fazer doc!!!
+fazer testes!!

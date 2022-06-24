@@ -43,8 +43,10 @@ public class Main {
 			        System.out.println("Primeiramente, digite a data da sua anotação: dd/mm/aaaa ");
 					String data = entrada.next(); 
 					data = data.replace("/", ""); 
+          
 					System.out.println("Qual ave foi identificada? ");
 					String aveIdentificada = entrada.next();
+          
 					System.out.println("Digite o local: ");
 					String local = entrada.next();
           			
@@ -222,7 +224,19 @@ public class Main {
 					System.out.println("\f");
 					System.out.println("\t --- CATÁLOGO DE AVES --- ");
 					System.out.println("\n");
-					
+
+					System.out.println("Digite o mês: ");
+					String mesEscolhido = entrada.next();
+					System.out.println("Digite o ano: ");
+					String anoEscolhido = entrada.next();
+
+					//Exemplo do subtring:
+					//Data: 10122020 -> (2, 4) = 12, (4, 8) = 2020
+					if (data.subString(2, 4).equals(mesEscolhido) && data.subString(4, 8).equals(anoEscolhido)) {
+						System.out.println("teste");
+					} 
+
+								
 
 				case 6:
 					// System.out.println("\f");
