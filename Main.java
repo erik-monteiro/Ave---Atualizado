@@ -70,13 +70,15 @@ public class Main {
                     String linhaEscolhida = entrada.next();
                     System.out.println("Digite a coluna: ");
                     String colunaEscolhida = entrada.next();
+					
                     int i = 0;
                     int controle = 0;
+					
                     while (i!=10) {
                         for (i = 0; i < aves.length; i++) {				
                             if (aves[i].getPagina().equals(paginaEscolhida) &&
-                            aves[i].getLinha().equals(linhaEscolhida) &&
-                            aves[i].getColuna().equals(colunaEscolhida)) {
+	                            aves[i].getLinha().equals(linhaEscolhida) &&
+	                            aves[i].getColuna().equals(colunaEscolhida)) {
                                 System.out.println("\n\nAve encontrada! Seguem suas características: ");
                                 System.out.println("\n\t Nome em Português: " + aves[i].getNomePortugues());
                                 System.out.println("\t Nome em Latim: " + aves[i].getNomeLatim());
@@ -86,14 +88,13 @@ public class Main {
                                 System.out.println("\t Habitat: " + aves[i].getHabitat());
                                 System.out.println("\t Família: " + aves[i].getFamilia()); 
                                 System.out.println("\n");
-
                             } else {
-                                controle++;
+                            	controle++;
                             }
                         }
-                        if(controle == 10){
+                        if (controle == 10) {
                             System.out.println("Nenhuma ave encontrada!");
-                           System.out.println("\n");
+                        	System.out.println("\n");
                         }
                     }
                     break;
@@ -189,6 +190,10 @@ public class Main {
 								}
 							}
 							break;
+
+						default:
+							System.out.println("\nOPÇÃO INCORRETA! Digite somente o que foi pedido!");
+							continue;
 					}
 
 				case 5:
@@ -205,7 +210,7 @@ public class Main {
 	}
 
 	public static void mostrarMenu() {
-		System.out.println(" --- INÍCIO DO PROGRAMA --- ");
+		System.out.println(" --- MENU --- ");
 		System.out.println(" 1 - Anotar ");
 		System.out.println(" 2 - Consultar catálogo ");
 		System.out.println(" 3 - Consultar catálogo por páginas ");
