@@ -6,24 +6,24 @@ public class Main {
 		Ave[] aves = {
 			new Ave("pomba-do-Orvalho", "patagioenas maculosa", "spot-winged Pigeon", "cinza", "35",
 					"campo com árvores", "columbidae", "20", "1", "2"),
-			new Ave("coruja-buraqueira", "athene cunicularia", "Burrowing Owl", "marrom", "25", "Campo seco baixo",
-					"Strigidae", "25", "2", "2"),
-			new Ave("Graúna", "Gnorinopsar chopi", "Chopi Blackbird", "preto", "23", "Campo seco alto", "Icteridae",
+			new Ave("coruja-buraqueira", "athene cunicularia", "burrowing Owl", "marrom", "25", "campo seco baixo",
+					"strigidae", "25", "2", "2"),
+			new Ave("graúna", "gnorinopsar chopi", "chopi blackbird", "preto", "23", "campo seco alto", "icteridae",
 					"13", "3", "1"),
-			new Ave("Canário-Rasteiro", "Sicalis citrina", "Stripe-tailed Yellow-Finch", "amarelo", "12",
-					"Compo seco alto", "Thraupidae", "40", "1", "2"),
-			new Ave("Caturrita", "Myiopsitta monachus", "Monk Parakeet", "verde", "27",
-					"Campo seco baixo e Campo com árvores", "Psittacidae", "34", "2", "1"),
+			new Ave("canário-Rasteiro", "sicalis citrina", "stripe-tailed Yellow-Finch", "amarelo", "12",
+					"campo seco alto", "thraupidae", "40", "1", "2"),
+			new Ave("caturrita", "myiopsitta monachus", "monk parakeet", "verde", "27",
+					"campo seco baixo e campo com árvores", "psittacidae", "34", "2", "1"),
 			new Ave("curiango-do-banhado", "hydropsalis anomala", "Sickle-winged nightjar", "marron", "17",
 					"campo seco alto", "caprimulgidae", "26", "1", "2"),
-			new Ave("Cardeal", "Paroaria coronata", "Red-crested Cardinal", "branco", "17", "Campo com arvores",
-					"Thraupidae", "11", "2", "2"),
-			new Ave("Cardeal-do-Banhado", "Amblyramphus holosericeus", "Scarlet-headed Blackbird", "Preto", "22",
-					"banhado com vegetação alta", "Icteridae", "14", "3", "1"),
-			new Ave("Amarelinho-do-Junco", "Pseudocolopteryx flaviventris", "Warbling Doradito", "Amarelo", "10",
-					"habitat", "Tyrannidae", "40", "3", "1"),
-			new Ave("Noivinha-coroada", "Xolmis coronatus", "Black-crowned Monjita", "branco", "20",
-					"Campo com arvores", "Tyrannidae", "10", "3", "2") 
+			new Ave("cardeal", "paroaria coronata", "red-crested cardinal", "branco", "17", "campo com arvores",
+					"thraupidae", "11", "2", "2"),
+			new Ave("cardeal-do-Banhado", "amblyramphus holosericeus", "scarlet-headed blackbird", "preto", "22",
+					"banhado com vegetação alta", "icteridae", "14", "3", "1"),
+			new Ave("amarelinho-do-Junco", "pseudocolopteryx flaviventris", "warbling doradito", "amarelo", "10",
+					"habitat", "tyrannidae", "40", "3", "1"),
+			new Ave("noivinha-coroada", "xolmis coronatus", "black-crowned monjita", "branco", "20",
+					"campo com arvores", "tyrannidae", "10", "3", "2") 
 		};
 
 		boolean sucesso = true;
@@ -135,6 +135,7 @@ public class Main {
 					
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getNomeLatim().contains(nomeLatim.toLowerCase())) {
+									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -148,6 +149,7 @@ public class Main {
 					
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getNomeIngles().contains(nomeIngles.toLowerCase())) {
+									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 								
@@ -161,6 +163,7 @@ public class Main {
 						
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getCor().contains(corAve.toLowerCase())) {
+									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -174,6 +177,7 @@ public class Main {
 							
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getTamanho().contains(tamanhoAve.toLowerCase())) {
+									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -187,6 +191,7 @@ public class Main {
 							
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getHabitat().contains(habitatAve.toLowerCase())) {
+									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -200,6 +205,7 @@ public class Main {
 							
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getFamilia().contains(familiaAve.toLowerCase())) {
+										System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -218,6 +224,8 @@ public class Main {
 					String mesEscolhido = entrada.next();
 					System.out.println("Digite o ano que a ave foi avistada: (aaaa)");
 					String anoEscolhido = entrada.next();
+
+					System.out.println("No mês " + mesEscolhido + " do ano " + anoEscolhido + " foram avistadas as seguintes aves: ");
 
 					/*
 					if (data.substring(2, 4).equals(mesEscolhido) && data.substring(4, 8).equals(anoEscolhido)) {
