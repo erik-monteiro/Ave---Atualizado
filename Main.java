@@ -5,8 +5,8 @@ public class Main {
 		Scanner entrada = new Scanner(System.in);
 		Ave[] aves = {
 			new Ave("pomba-do-Orvalho", "patagioenas maculosa", "spot-winged Pigeon", "cinza", "35",
-					"campo 						com árvores", "columbidae", "20", "1", "2"),
-			new Ave("coruja-buraqueira", "Athene cunicularia", "Burrowing Owl", "marrom", "25", "Campo seco baixo",
+					"campo com árvores", "columbidae", "20", "1", "2"),
+			new Ave("coruja-buraqueira", "athene cunicularia", "Burrowing Owl", "marrom", "25", "Campo seco baixo",
 					"Strigidae", "25", "2", "2"),
 			new Ave("Graúna", "Gnorinopsar chopi", "Chopi Blackbird", "preto", "23", "Campo seco alto", "Icteridae",
 					"13", "3", "1"),
@@ -48,11 +48,9 @@ public class Main {
 					String aveIdentificada = entrada.next();
           
 					System.out.println("Digite o local: ");
-					String local = entrada.next();
-          			
+					String local = entrada.next();    
 
 					Anotacao[] anotacoes = { new Anotacao (data, aveIdentificada, local) };
-          		
           
 					for (int i = 0; i < anotacoes.length; i++) {
 						System.out.println(anotacoes[i].getData());
@@ -60,7 +58,7 @@ public class Main {
 						System.out.println(anotacoes[i].getLocal());
 					}
 					
-					
+			
 			      	sucesso = false;
 					break;
 
@@ -98,7 +96,7 @@ public class Main {
                     int i = 0;
                     int controle = 0;
 					
-                    while (i!=10) {
+                    while (i != 10) {
                         for (i = 0; i < aves.length; i++) {				
                             if (aves[i].getPagina().equals(paginaEscolhida) &&
 	                            aves[i].getLinha().equals(linhaEscolhida) &&
@@ -124,9 +122,8 @@ public class Main {
                     break;
 
 				case 4:
-					System.out.println("\n\nEscolha uma característica da Ave");
-					System.out.println(
-							"\n 1 - Nome em Latim\n 2 - Nome em Inglês\n 3 - Cor\n 4 - Tamanho\n 5 - Habitat\n 6 - Família\n 7 - Pagina, Linha e Coluna\n ");
+					System.out.println("\n\nEscolha uma característica da Ave:");
+					System.out.println("\n 1 - Nome em Latim\n 2 - Nome em Inglês\n 3 - Cor\n 4 - Tamanho\n 5 - Habitat\n 6 - Família\n ");
 					int opcaoCaracteristica = entrada.nextInt();
 
 					switch (opcaoCaracteristica) {
@@ -135,27 +132,25 @@ public class Main {
 							System.out.println("\f");
 							System.out.println("Digite o nome da ave em latim: ");
 							String nomeLatim = entrada.next();
-							i = 0;
-							while (i != 10) {
-								for (i = 0; i < aves.length; i++) {
-									if (aves[i].getNomeLatim().contains(nomeLatim.toLowerCase())) {
-										System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
-									}
+					
+							for (i = 0; i < aves.length; i++) {
+								if (aves[i].getNomeLatim().contains(nomeLatim.toLowerCase())) {
+									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
+							
 							break;
 
 						case 2:
 							System.out.println("\f");
 							System.out.println("Digite o nome da ave em inglês: ");
 							String nomeIngles = entrada.next();
-							i = 0;
-							while (i != 10) {
-								for (i = 0; i < aves.length; i++) {
-									if (aves[i].getNomeIngles().contains(nomeIngles.toLowerCase())) {
-										System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
-									}
+					
+							for (i = 0; i < aves.length; i++) {
+								if (aves[i].getNomeIngles().contains(nomeIngles.toLowerCase())) {
+									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
+								
 							}
 							break;
 
@@ -163,80 +158,76 @@ public class Main {
 							System.out.println("\f");
 							System.out.println("Digite a cor da ave: ");
 							String corAve = entrada.next();
-							i = 10;
-							while (i != 10) {
-								for (i = 0; i < aves.length; i++) {
-									if (aves[i].getCor().contains(corAve.toLowerCase())) {
-										System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
-									}
+						
+							for (i = 0; i < aves.length; i++) {
+								if (aves[i].getCor().contains(corAve.toLowerCase())) {
+									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
+							
 							break;
 
 						case 4:
 							System.out.println("\f");
 							System.out.println("Digite o tamanho da ave, em centímetros: ");
 							String tamanhoAve = entrada.next();
-							i = 10;
-							while (i != 10) {
-								for (i = 0; i < aves.length; i++) {
-									if (aves[i].getTamanho().contains(tamanhoAve.toLowerCase())) {
-										System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
-									}
+							
+							for (i = 0; i < aves.length; i++) {
+								if (aves[i].getTamanho().contains(tamanhoAve.toLowerCase())) {
+									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
+							
 							break;
 
 						case 5:
 							System.out.println("\f");
 							System.out.println("Digite o habitat da ave: ");
 							String habitatAve = entrada.next();
-							i = 10;
-							while (i != 10) {
-								for (i = 0; i < aves.length; i++) {
-									if (aves[i].getHabitat().contains(habitatAve.toLowerCase())) {
-										System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
-									}
+							
+							for (i = 0; i < aves.length; i++) {
+								if (aves[i].getHabitat().contains(habitatAve.toLowerCase())) {
+									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
+							
 							break;
 
 						case 6:
 							System.out.println("\f");
 							System.out.println("Digite a família da ave desejada: ");
 							String familiaAve = entrada.next();
-							i = 10;
-							while (i != 10) {
-								for (i = 0; i < aves.length; i++) {
-									if (aves[i].getFamilia().contains(familiaAve.toLowerCase())) {
-										System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
-									}
+							
+							for (i = 0; i < aves.length; i++) {
+								if (aves[i].getFamilia().contains(familiaAve.toLowerCase())) {
+									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
+							
 							break;
 
 						default:
 							System.out.println("\nOPÇÃO INCORRETA! Digite somente o que foi pedido!");
-							continue;
+							break;
 					}
 
 				case 5:
-					System.out.println("\f");
-					System.out.println("\t --- CATÁLOGO DE AVES --- ");
-					System.out.println("\n");
+					System.out.println(" --- CONSULTA DE AVES POR MÊS E ANO --- ");
 
-					System.out.println("Digite o mês: ");
+					System.out.println("Digite o mês que a ave foi avistada: (mm)");
 					String mesEscolhido = entrada.next();
-					System.out.println("Digite o ano: ");
+					System.out.println("Digite o ano que a ave foi avistada: (aaaa)");
 					String anoEscolhido = entrada.next();
 
-					//Exemplo do subtring:
-					//Data: 10122020 -> (2, 4) = 12, (4, 8) = 2020
-					if (data.subString(2, 4).equals(mesEscolhido) && data.subString(4, 8).equals(anoEscolhido)) {
+					/*
+					if (data.substring(2, 4).equals(mesEscolhido) && data.substring(4, 8).equals(anoEscolhido)) {
 						System.out.println("teste");
 					} 
+					*/
 
-								
+					break;
+			
+						
 
 				case 6:
 					// System.out.println("\f");
