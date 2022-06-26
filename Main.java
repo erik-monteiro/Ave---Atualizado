@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 		Ave[] aves = {
-			new Ave("pomba-do-Orvalho", "patagioenas maculosa", "spot-winged Pigeon", "cinza", "35",
+			new Ave("pomba-do-orvalho", "patagioenas maculosa", "spot-winged Pigeon", "cinza", "35",
 					"campo com árvores", "columbidae", "20", "1", "2"),
 			new Ave("coruja-buraqueira", "athene cunicularia", "burrowing Owl", "marrom", "25", "campo seco baixo",
 					"strigidae", "25", "2", "2"),
@@ -21,7 +21,7 @@ public class Main {
 			new Ave("cardeal-do-Banhado", "amblyramphus holosericeus", "scarlet-headed blackbird", "preto", "22",
 					"banhado com vegetação alta", "icteridae", "14", "3", "1"),
 			new Ave("amarelinho-do-Junco", "pseudocolopteryx flaviventris", "warbling doradito", "amarelo", "10",
-					"habitat", "tyrannidae", "40", "3", "1"),
+					"banhado com vegetação alta", "tyrannidae", "40", "3", "1"),
 			new Ave("noivinha-coroada", "xolmis coronatus", "black-crowned monjita", "branco", "20",
 					"campo com arvores", "tyrannidae", "10", "3", "2") 
 		};
@@ -42,7 +42,7 @@ public class Main {
 				
 			        System.out.println("Primeiramente, digite a data da sua anotação: dd/mm/aaaa ");
 					String data = entrada.next(); 
-					data = data.replace("/", ""); 
+					//data = data.replace("/", ""); 
           
 					System.out.println("Qual ave foi identificada? ");
 					String aveIdentificada = entrada.next();
@@ -53,9 +53,10 @@ public class Main {
 					Anotacao[] anotacoes = { new Anotacao (data, aveIdentificada, local) };
           
 					for (int i = 0; i < anotacoes.length; i++) {
-						System.out.println(anotacoes[i].getData());
-						System.out.println(anotacoes[i].getAveIdentificada());
-						System.out.println(anotacoes[i].getLocal());
+						System.out.println("\nSuas anotações: ");
+						System.out.println("Data: " + anotacoes[i].getData());
+						System.out.println("Ave identificada: " + anotacoes[i].getAveIdentificada());
+						System.out.println("Local: " + anotacoes[i].getLocal());
 					}
 					
 			
@@ -135,7 +136,6 @@ public class Main {
 					
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getNomeLatim().contains(nomeLatim.toLowerCase())) {
-									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -149,7 +149,6 @@ public class Main {
 					
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getNomeIngles().contains(nomeIngles.toLowerCase())) {
-									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 								
@@ -163,7 +162,6 @@ public class Main {
 						
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getCor().contains(corAve.toLowerCase())) {
-									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -177,7 +175,6 @@ public class Main {
 							
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getTamanho().contains(tamanhoAve.toLowerCase())) {
-									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -191,7 +188,6 @@ public class Main {
 							
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getHabitat().contains(habitatAve.toLowerCase())) {
-									System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -205,7 +201,6 @@ public class Main {
 							
 							for (i = 0; i < aves.length; i++) {
 								if (aves[i].getFamilia().contains(familiaAve.toLowerCase())) {
-										System.out.println("\n Foram encontrada(s) a(s) seguinte(s) ave(s): ");
 									System.out.printf("%2d - %s%n", i + 1, aves[i].getNomePortugues());
 								}
 							}
@@ -218,27 +213,6 @@ public class Main {
 					}
 
 				case 5:
-					System.out.println(" --- CONSULTA DE AVES POR MÊS E ANO --- ");
-
-					System.out.println("Digite o mês que a ave foi avistada: (mm)");
-					String mesEscolhido = entrada.next();
-					System.out.println("Digite o ano que a ave foi avistada: (aaaa)");
-					String anoEscolhido = entrada.next();
-
-					System.out.println("No mês " + mesEscolhido + " do ano " + anoEscolhido + " foram avistadas as seguintes aves: ");
-
-					/*
-					if (data.substring(2, 4).equals(mesEscolhido) && data.substring(4, 8).equals(anoEscolhido)) {
-						System.out.println("teste");
-					} 
-					*/
-
-					break;
-			
-						
-
-				case 6:
-					// System.out.println("\f");
 					System.out.println("Programa encerrado!");
 					sucesso = false;
 					break;
@@ -257,8 +231,7 @@ public class Main {
 		System.out.println("\t2 - Consultar catálogo ");
 		System.out.println("\t3 - Consultar catálogo por páginas ");
 		System.out.println("\t4 - Pesquisar ave ");
-		System.out.println("\t5 - Consultar aves avistadas no mês ");
-		System.out.println("\t6 - Sair do programa ");
+		System.out.println("\t5 - Sair do programa ");
 	}
 
 }

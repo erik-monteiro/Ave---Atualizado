@@ -31,7 +31,9 @@ public class Ave
     {
         return nomePortugues;
     }
-
+	/**
+	* Obtem o nome em latim
+	*/
     public String getNomeLatim()
     {
         return nomeLatim;
