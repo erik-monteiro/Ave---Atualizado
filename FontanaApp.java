@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class FontanaApp {
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 		Ave[] aves = {
@@ -223,7 +223,9 @@ public class Main {
 			}
 		}
 	}
-
+  /**
+  * Mostra o menu inicial do programa.
+  */
 	public static void mostrarMenu() {
 		System.out.println("\n\t        MENU");
 		System.out.println("\t        ====");

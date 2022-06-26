@@ -26,54 +26,82 @@ public class Ave
         this.linha = linha;
         this.coluna = coluna;
     }
-
+    /**
+    * Obtem o nome da ave em portugues.
+    * @return nome da ave em portugues
+    */
     public String getNomePortugues()
     {
         return nomePortugues;
     }
-	/**
-	* Obtem o nome em latim
-	*/
+    /**
+    * Obtem o nome da ave em latim.
+    * @return nome da ave em latim
+    */
     public String getNomeLatim()
     {
         return nomeLatim;
     }
-
+    /**
+    * Obtem o nome da ave em ingles.
+    * @return nome da ave em ingles
+    */
     public String getNomeIngles()
     {
         return nomeIngles;
     }
-
+    /**
+    * Obtem a cor da ave.
+    * @return cor da ave
+    */
     public String getCor()
     {
         return cor;
     }
-
+    /**
+    * Obtem o tamanho da ave.
+    * @return tamanho da ave
+    */
     public String getTamanho()
     {
         return tamanho;
     }
-
+    /**
+    * Obtem o habitat natural da ave.
+    * @return habitat natural da ave
+    */
     public String getHabitat()
     {
         return habitat;
     }
-
+    /**
+    * Obtem a familia da qual a ave pertence.
+    * @return familia da qual a ave pertence
+    */
     public String getFamilia()
     {
         return familia;
     }
-
+    /**
+    * Obtem a pagina do "guia de aves" onde a ave se encontra.
+    * @return pagina do "guia das aves" onde a ave se encontra
+    */
     public String getPagina()
     {
         return pagina;
     }
-    
+    /**
+    * Obtem a linha da pagina do "guia de aves" onde a ave se encontra.
+    * @return linha da pagina do "guia das aves" onde a ave se encontra
+    */
     public String getLinha()
     {
         return linha;
     }
-    
+    /**
+    * Obtem a coluna pagina do "guia de aves" onde a ave se encontra.
+    * @return coluna pagina do "guia das aves" onde a ave se encontra
+    */
     public String getColuna()
     {
         return coluna;
