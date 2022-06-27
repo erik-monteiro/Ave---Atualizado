@@ -1,7 +1,41 @@
 import java.util.Scanner;
-
+/**
+* A classe FontanaApp e aplicativo para consulta e retencao de dados a respeito de uma serie de aves selecionadas.
+*/
 public class FontanaApp 
 {
+  /**
+  * Programa de consulta e gestao de dados a respeito de aves ja registradas e anotacoes do usuario.
+  *
+  * @param args nao utilizado
+  * @param entrada teclado
+  * @param aves aves
+  * @param numeroDeAnotacoes numero de anotacaoes feitas pelo usuario
+  * @param sucesso mantem a interface principal do programa funcionando
+  * @param mostrarMenu mostra o menu ao usuario
+  * @param data data completa em que a ave foi avistada
+  * @param dia dia em que a ave foi avistada
+  * @param mes mes em que a ave foi avistada
+  * @param ano ano em que a ave foi avistada
+  * @param aveIdentificada ave avistada pelo usuario
+  * @param local local onde a ave foi avistada pelo usuario
+  * @param simOuNao pergunta ao usuario se ele que inserir mais alguma anotacao
+  * @param outraAnotacao outra anotacao feita pelo usuario
+  * @param anotacoes anotacao do usuario completa
+  * @param consultarAnotacao consulta anotacoes feitas anteriormente
+  * @param consultaAnotacaoData consulta de datas para o usuario
+  * @param retorno retorna valores para o programa
+  * @param opcaoCaracteristica opcao de caracteristica (para que seja selecionada)
+  * @param paginaEscolhida pagina do "guia das aves" selecionada
+  * @param linhaEscolhida linha da pagina do "guia das aves" selecionada
+  * @param colunaEscolhida coluna da pagina do "guia das aves" selecionada
+  * @param nomeLatim nome da ave em latim 
+  * @param nomeIngles nome da ave em ingles
+  * @param corAve cor da ave
+  * @param tamanhoAve tamanho da ave
+  * @param habitatAve habitat do qual a ave pertence
+  * @param familiaAve familia de qual a ave pertence
+  */
     public static void main(String[] args) 
     {
         Scanner entrada = new Scanner(System.in);

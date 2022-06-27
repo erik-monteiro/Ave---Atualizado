@@ -11,6 +11,19 @@ public class Ave
 	private String linha;
 	private String coluna;
 
+    /**
+    * Contem todas as informacoes sobre as aves selecionadas e inseridas no programa
+    * @param nomePortugues nome da ave em portugues
+    * @param nomeLatim nome da ave em latim
+    * @param nomeIngles nome da ave em ingles
+    * @param cor cor da ave
+    * @param tamanho tamanho da ave
+    * @param habitat habitat natural da ave
+    * @param familia familia da qual a ave pertence
+    * @param pagina pagina onde a ave se encontra no "guia das aves"
+    * @param linha linha da pagina onde a ave se encontra no "guia das aves"
+    * @param coluna coluna da pagina onde a ave se encontra no "guia das aves"
+    */
     public Ave(String nomePortugues, String nomeLatim, String nomeIngles, 
     			String cor, String tamanho, String habitat, String familia, 
 				String pagina, String linha,String coluna)
@@ -100,7 +113,7 @@ public class Ave
     }
     /**
     * Obtem a coluna pagina do "guia de aves" onde a ave se encontra.
-    * @return coluna pagina do "guia das aves" onde a ave se encontra
+    * @return coluna da pagina do "guia das aves" onde a ave se encontra
     */
     public String getColuna()
     {
