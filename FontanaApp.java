@@ -28,16 +28,17 @@ public class FontanaApp
                     "campo com arvores", "tyrannidae", "10", "3", "2") 
             };
 
-        Anotacao[] anotacoes = { new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
-                new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
-                new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
-                new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
-                new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
-                new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
-                new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao")};
+        // Anotacao[] anotacoes = { new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
+        // new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
+        // new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
+        // new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
+        // new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
+        // new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao"),
+        // new Anotacao ("dia","mes","ano", "aveIdentificada", "local", "outraAnotacao")};
 
         int numeroDeAnotacoes = 0;        
         boolean sucesso = true;
+        String[][] Vetor = new String[10][6];
         while (sucesso) {
 
             mostrarMenu();
@@ -62,57 +63,67 @@ public class FontanaApp
                     String mes = data.substring(3,5);
                     String ano = data.substring(6,10);
 
-                    //data = data.replace("/", ""); 
+                    System.out.println("\n");
                     System.out.println("Qual ave foi identificada? ");
                     String aveIdentificada = entrada.next();
 
+                    System.out.println("\n");
                     System.out.println("Digite o local: ");
                     String local = entrada.next();   
 
+                    System.out.println("\n");
                     System.out.println("Quer anotar algo mais? (Sim ou Não)");
                     String simOuNao = entrada.next(); 
 
                     String outraAnotacao = "";
                     if(simOuNao.equalsIgnoreCase("sim")){
+                        System.out.println("\n");
                         System.out.println("Digite:");
                         outraAnotacao = entrada.next(); 
                     }else{
                         outraAnotacao = "";
                     }        
 
-                    //TODO: ATRIBUIR O VALOR DAS VARIÁVEIS ÀS SUAS CASAS NOS VETORES anotacoes[numeroDeAnotacoes], para que seja possível pesquisar depois
+                    Anotacao[] anotacoes = { new Anotacao (dia,mes,ano, aveIdentificada, local, outraAnotacao)};
+                    Vetor [numeroDeAnotacoes][0] = anotacoes[0].getDia();
+                    Vetor [numeroDeAnotacoes][1] = anotacoes[0].getMes();
+                    Vetor [numeroDeAnotacoes][2] = anotacoes[0].getAno();
+                    Vetor [numeroDeAnotacoes][3] = anotacoes[0].getAveIdentificada();
+                    Vetor [numeroDeAnotacoes][4] = anotacoes[0].getLocal();
+                    Vetor [numeroDeAnotacoes][5] = anotacoes[0].getOutraAnotacao();
 
                     System.out.println("\nSuas anotações: ");
-                    System.out.printf("Data: %2s/%2s/%4s%n", anotacoes[numeroDeAnotacoes].getDia(), anotacoes[numeroDeAnotacoes].getMes(), anotacoes[numeroDeAnotacoes].getAno());
-                    System.out.println("Ave identificada: " + anotacoes[numeroDeAnotacoes].getAveIdentificada());
-                    System.out.println("Local: " + anotacoes[numeroDeAnotacoes].getLocal());
-                    System.out.println(anotacoes[numeroDeAnotacoes].getOutraAnotacao());
+                    System.out.printf("Data: %2s/%2s/%4s%n", Vetor[numeroDeAnotacoes][0], Vetor[numeroDeAnotacoes][1], Vetor[numeroDeAnotacoes][2]);
+                    System.out.println("Ave identificada: " +  Vetor[numeroDeAnotacoes][3]);
+                    System.out.println("Local: " +  Vetor[numeroDeAnotacoes][4]);
+                    System.out.println( Vetor[numeroDeAnotacoes][5]);
 
                     System.out.println("\n");
                     System.out.println("Deseja consultar anotações antigas? (Sim ou Não)");
                     String consultarAnotacao = entrada.next();
                     if(consultarAnotacao.equalsIgnoreCase("sim")){
-
+                        System.out.println("\f");
                         System.out.println("\t --- CONSULTAR ANOTAÇÕES ---");
                         System.out.println("Digite o mês a ano das anotações que você deseja consultar: (mm/aaaa)");
 
                         String consultaAnotacaoData = entrada.next();
                         int i = 0;
 
-                        for( i = 0 ; i < anotacoes.length;i++){
-                            if((consultaAnotacaoData.substring(0,2)).equals(anotacoes[i].getMes()) && (consultaAnotacaoData.substring(3,7)).equals(anotacoes[i].getAno())){
-                                System.out.println("\nSuas anotações: ");
-                                System.out.printf("Data: %2s/%2s/%4s%n", anotacoes[i].getDia(), anotacoes[i].getMes(), anotacoes[i].getAno());
-                                System.out.println("Ave identificada: " + anotacoes[i].getAveIdentificada());
-                                System.out.println("Local: " + anotacoes[i].getLocal());
-                                System.out.println(anotacoes[i].getOutraAnotacao());
-                            }
-
+                        while(i < anotacoes.length){
+                            for( i = 0 ; i < Vetor.length;i++){
+                                if((consultaAnotacaoData.substring(0,2)).equals(Vetor[i][1]) && (consultaAnotacaoData.substring(3,7)).equals(Vetor[i][2])){
+                                    System.out.println("\nSuas anotações da data pesquisada: ");
+                                    System.out.printf("Data: %2s/%2s/%4s%n", Vetor[i][0], Vetor[i][1], Vetor[i][2]);
+                                    System.out.println("Ave identificada: " +  Vetor[i][3]);
+                                    System.out.println("Local: " +  Vetor[i][4]);
+                                    System.out.println( Vetor[i][5]);
+                                }
+                            }  
                         }
                     }else{
                         break;
-
                     }
+
                     //sucesso = false;
                     break;
 
